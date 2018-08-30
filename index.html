@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<head>
+<title>Check Research Tools and Papers</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 600, function(){
+
+        window.location.hash = hash;
+      });
+    }
+  });
+});e
+</script>
+
+<script>
+
+function smallmenu() {
+    var x = document.getElementById("smallnav");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+    $("nav").click(function(){      
+        $(".navigation").toggleClass('closed');
+    });
+}
+</script>
+
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-navbar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <ul class="w3-navbar w3-orange w3-card-2 w3-left-align w3-large">
+    <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+      <a class="w3-padding-large w3-hover-white w3-large w3-orange" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    </li>
+    <li><a href="#" class="w3-padding-large w3-white">Home</a></li>
+    <li class="w3-hide-small"><a href="#overview" class="w3-padding-large w3-hover-white">Overview</a></li>
+    <li class="w3-hide-small"><a href="#tools" class="w3-padding-large w3-hover-white">Tool Releases</a></li>
+   <li class="w3-hide-small"><a href="#press" class="w3-padding-large w3-hover-white">Press</a></li>
+    <li class="w3-hide-small"><a href="#pubs" class="w3-padding-large w3-hover-white">Publications</a></li>
+    <li class="w3-hide-small"><a href="#people" class="w3-padding-large w3-hover-white">People</a></li>
+    <li class="w3-hide-small"><a href="#tutorial" class="w3-padding-large w3-hover-white">Tutorial</a></li>
+  </ul>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium">
+    <ul class="w3-navbar w3-left-align w3-large w3-black">
+      <li><a class="w3-padding-large" href="#overview">Overview</a></li>
+      <li><a class="w3-padding-large" href="#tools">Tool Releases</a></li>
+      <li><a class="w3-padding-large" href="#press">Press</a></li>
+      <li><a class="w3-padding-large" href="#pubs">Publications</a></li>
+      <li><a class="w3-padding-large" href="#people">People</a></li>
+      <li><a class="w3-padding-large" href="#tutorial">Tutorial</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-orange w3-center w3-padding-24">
+<br>
+	<h2 class="w3-margin w3-xxxlarge">Check: Research Tools and Papers </h2>
+             <h3> Princeton University </h3>
+</header>
+
+<!-- Zeroth Grid -->
+<div class="w3-row-padding " id="overview">
+  <div class="w3-content">
+    <div class="w3-half">
+      <h3>New!</h3>
+<ul>
+<li> July, 2018: Paper on CheckMate tool for formal hardware security verification accepted to MICRO 51 <a href="papers/ctrippel_MICRO51.pdf">(Draft. Final version expected September, 2018)</a>.
+<li> June, 2018: Full-Stack Memory Model Verification with TriCheck paper now available as an IEEE Micro Top Picks article <a href="https://ieeexplore.ieee.org/document/8357999/">(pdf)</a>.
+<li> October, 2017: RTLCheck tool open-sourced! <a href="https://github.com/ymanerka/rtlcheck">(github)</a>.
+<li> June, 2017: CoatCheck Transistency Verification paper now available as an IEEE Micro Top Picks article <a href="http://ieeexplore.ieee.org/document/7948960/">(pdf)</a>.
+<li> June, 2017: Check Tools tutorial at <a href="http://isca17.ece.utoronto.ca/doku.php?id=wiki:tutorials">ISCA 2017</a>.
+<li> May, 2017: TriCheck tool now open-sourced! <a href="https://github.com/ctrippel/TriCheck">(github)</a>
+<li> May, 2017: Caroline Trippel named as <a href="https://research.nvidia.com/content/2017-grad-fellows">2017 NVIDIA Graduate Fellowship recipient</a>!
+
+</ul>
+    </div>
+
+</div>
+<!-- First Grid -->
+<div class="w3-row-padding " id="overview">
+  <div class="w3-content">
+    <div class="w3-half">
+      <h3>Overview</h3>
+      From 2013 to the present, our work on specifying, verifying and translating memory consistency models has led to a number of publications, tool releases, and industry adoption. <br>
+
+      Perhaps most importantly for a verification project, our verification tools have found numerous major design errors at this point. These include: 
+<ul>
+<li> Fundamental deficiencies in the draft specification of a widely-discussed instruction set architecture <a href="http://check.cs.princeton.edu/papers/ctrippel_ASPLOS17.pdf">(more info)</a>. 
+<li> An error in the consistency implementation for a widely used simulator <a href="http://check.cs.princeton.edu/papers/dlustig_MICRO14header.pdf">(more info)</a>.
+<li> A corner case in a proposed lazy coherence method <a href="http://check.cs.princeton.edu/papers/MICRO2015_Yatin_Manerkar.pdf">(more info)<a href="http://homepages.inf.ed.ac.uk/s0787712/res/research/tsocc/tso-cc_spec.pdf
+">(updated spec)</a>.
+<li> Errors in compiler mappings for translating high-level synchronization primitives onto particular instruction sets with weak memory model.  And, an error in the formal proof previously thought to ensure the correctness of those mappings  <a href="https://arxiv.org/pdf/1611.01507v2.pdf">(more info)</a>.
+<li> An error in the RTL implementation of memory in an open-source processor. <a href="papers/MICRO-50_Manerkar.pdf">(more info)</a>.
+</ul> 
+Beyond these concrete bug discoveries, our tools have also been used to reproduce other known bugs and deepen understanding of them.  
+    </div>
+
+    <div class="w3-half w3-center w3-section">
+<br>
+      <img class="w3-card-8 " src="pipecheck.png" alt="pipecheck" width = 80%>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey " id="tools">
+  <div class="w3-content">
+    <div class="w3-half w3-center">
+      <br><br><br>
+      <img class="w3-card-8 " src="armor.png" alt="pipecheck" width = 80%>
+    </div>
+
+    <div class="w3-half">
+      <h3>Tool Releases</h3>
+      <!-- <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5> -->
+
+      <ul>
+      <li> PipeCheck: For verifying that the memory ordering provided by a particular microarchitectural implementation match that of the architectural memory model specification. <a href="https://github.com/daniellustig/pipecheck">(github)</a>
+
+      <br><br>
+
+      <li> CCICheck: For verifying coherence and consistency implementations in a unified manner. <a href="https://github.com/ymanerka/ccicheck">(github)</a>
+
+      <br><br>
+
+      <li> Web Interface: For building intuition about memory ordering and microarchitectural modeling and verification.  <a href="http://daniellustig.net/coatcheck/. "> (web interface to tool)</a>
+
+      <br><br>
+
+      <li> COATCheck: For verifying memory ordering issues in the face of virtual memory issues (virtual to physical page mappings) and other Hardware-OS Interface issues. <a href="https://github.com/daniellustig/coatcheck">(github)</a>
+
+      <br><br>
+
+      <li> ArMOR: For automatically specifying and translating between memory consistency models. <a href="https://github.com/daniellustig/armor">(github)</a>
+
+      <br><br>
+
+      <li> TriCheck: Full-Stack MCM verification from high-level languages (e.g. C11) to microarchitectures. <a href="https://github.com/ctrippel/TriCheck">(github)</a>
+
+      <br><br>
+
+      <li> RTLCheck: For memory consistency verification of processor RTL against microarchitectural ordering specifications. <a href="https://github.com/ymanerka/rtlcheck">(github)</a>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Third Grid -->
+<div class="w3-row-padding" id="press">
+  <div class="w3-content">
+    <div>
+      <h3>Press</h3>
+
+      <h5>April, 2017: Press regarding TriCheck and deficiences in the RISC-V ISA MCM Specification:
+<ul>
+<li> <a href="http://www.princeton.edu/main/news/archive/S49/20/10O81/?section=topstories"> Princeton Press Release </a>
+<li> <a href="https://riscv.org/2017/04/risc-v-memory-consistency-model/"> RISC-V Response </a>
+<li> <a href="https://www.design-reuse.com/industryexpertblogs/41877/risc-v-when-a-bug-really-is-a-feature.html"> Design and Reuse.  "RISC-V: When a bug really is a feature"</a>
+</ul> </h5>
+
+      <h5>February, 2017: STARNet Center for Future Architectures Research (CFAR) <a href="https://www.futurearchs.org/news/martonosi-team-paper-ieee-micro-top-pick"> Coverage of COATCheck Top Picks Selection</a></h5>
+
+      <h5>March, 2016: STARNet Center for Future Architectures Research (CFAR) <a href="https://www.futurearchs.org/news/princeton-researchers-develop-new-software-detecting-consistency-bugs"> Coverage of our work </a></h5>
+    </div>
+  </div>
+</div>
+
+<!-- Fourth Grid -->
+<div class="w3-row-padding w3-light-grey" id="pubs">
+  <div class="w3-content">
+    <div>
+      <h3>Publications</h3>
+      <h5>Our work has been supported in part by the National Science Foundation*(under grants CCF-1117147, CCF-1253700, and others). (Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.  In addition, we acknowledge past or ongoing support from CFAR, DARPA and others.  The provided papers are subject to copyright by ACM, IEEE, or other entities.</h5>
+
+
+      <ul>
+
+      <li>Yatin A. Manerkar, Daniel Lustig, Margaret Martonosi, and Aarti Gupta.
+      "PipeProof: Automated Memory Consistency Proofs of Microarchitectural Specifications", the 51st Annual IEEE/ACM
+      International Symposium on Microarchitecture (MICRO), October 2018.
+      <!--<a href="papers/MICRO-50_Manerkar.pdf">(pdf)</a>-->
+      </li>
+
+      <br>
+
+      <li>Caroline Trippel, Daniel Lustig, and Margaret Martonosi.
+      "CheckMate: Automated Exploit Program Generation for Hardware Security Verification",
+      the 51st Annual IEEE/ACM International Symposium on Microarchitecture (MICRO), October 2018.
+      <a href="papers/ctrippel_MICRO51.pdf">(Draft. Final version expected September, 2018)</a>
+      </li>
+
+      <br>
+
+
+      <li>Caroline Trippel, Yatin A. Manerkar, Daniel Lustig, Michael Pellauer, and Margaret Martonosi.
+      "Full-Stack Memory Model Verification with TriCheck".
+      IEEE Micro, 38 (3) <b>(Top Picks of the 2017 Computer Architecture Conferences)</b>, May-June 2018
+      <a href="papers/ctrippel_IEEETopPicks18.pdf">(pdf)</a>
+      </li>
+
+      <br>
+
+      <li>Yatin A. Manerkar, Daniel Lustig, Margaret Martonosi, and Michael Pellauer.
+      "RTLCheck: Verifying the Memory Consistency of RTL Designs", the 50th Annual IEEE/ACM
+      International Symposium on Microarchitecture (MICRO), October 2017.
+      <a href="papers/MICRO-50_Manerkar.pdf">(pdf)</a>
+      </li>
+
+      <br>
+
+      <li> Daniel Lustig, Geet Sethi, Margaret Martonosi,  and Abhishek Bhattacharjee,
+      "Transistency Models: Memory Ordering at the Hardware-OS Interfaces".
+      IEEE Micro, 37 (3) <b>(Top Picks of the 2016 Computer Architecture Conferences)</b>, May-June 2017 <!-- <a href="papers/dlustig_toppicks16.pdf"> (pdf)</a> -->
+      </li>
+
+      <br>
+
+      <li>
+	Caroline Trippel, Yatin A. Manerkar, Daniel Lustig, Michael Pellauer, and Margaret Martonosi. "TriCheck: Memory Model Verification at the Trisection of Software, Hardware, and ISA", 22nd International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), April 2017.
+	<a href="papers/ctrippel_ASPLOS17.pdf">(pdf)</a>
+      </li>
+
+      <br>
+
+
+      <li>
+	Yatin A. Manerkar, Caroline Trippel, Daniel Lustig, Michael Pellauer, and Margaret Martonosi. "Counterexamples and Proof Loophole for the C/C++ to POWER and ARMv7 Trailing-Sync Compiler Mappings". <i>CoRR</i>, abs/1611.01507, 2016.
+	<a href="http://arxiv.org/pdf/1611.01507v2.pdf">(pdf)</a>
+      </li>
+
+      <br>
+      
+
+      <li>
+      Daniel Lustig, Geet Sethi, Margaret Martonosi, and Abhishek Bhattacharjee, "COATCheck: Verifying Memory Ordering at the Hardware-OS Interface", the 21st International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), April 2016.
+      <a href="papers/dlustig_ASPLOS16.pdf">(pdf)</a>
+      </li>
+      
+      <br>
+      
+      <li>Yatin A. Manerkar, Daniel Lustig, Michael Pellauer, and Margaret Martonosi.
+      "CCICheck: Using µhb Graphs to Verify the Coherence-Consistency Interface", the 48th Annual IEEE/ACM
+      International Symposium on Microarchitecture (MICRO), December 2015. <b>Nominated for Best Paper</b>.
+      <a href="papers/MICRO2015_Yatin_Manerkar.pdf">(pdf)</a>
+      <a href="slides2/MICRO2015_CCICheck_Slides.pdf">(slides)</a>
+      <a href="posters/MICRO2015_CCICheck_Poster.pdf">(poster)</a>
+      </li>
+      <br>
+      <li>Daniel Lustig, "Specifying, Verifying, and Translating Between Memory Consistency Models", Ph.D. Dissertation, November 2015.<b> Honorable Mention, Bede Liu EE Department Dissertation Award</b>
+      <a href="papers/dlustig_thesis.pdf">(pdf)</a>
+      </li>
+
+      <br>
+
+      <li>
+      Daniel Lustig, Caroline Trippel, Michael Pellauer, and Margaret Martonosi, "ArMOR: Defending Against Consistency Model Mismatches in Heterogeneous Architectures", the 42nd International Symposium on Computer Architecture (ISCA), June 2015.
+      <a href="papers/dlustig_ISCA15.pdf">(pdf)</a>
+      <a href="https://www.cs.princeton.edu/research/techreps/TR-981-15">(extended pdf and gallery)</a>
+      <a href="slides/LustigArMOR.pdf">(slides)</a>
+      </li>
+      
+      <br>
+      
+      <li> Daniel Lustig, Michael Pellauer, and Margaret Martonosi,
+      "Verifying Correct Microarchitectural Enforcement of Memory Consistency Models."
+      IEEE Micro, 35 (3) <b>(Top Picks of the 2014 Computer Architecture Conferences)</b>, May-June 2015 <a href="papers/dlustig_toppicks.pdf"> (pdf)</a>
+      </li>
+
+      <br>
+      
+      <li> Daniel Lustig, Michael Pellauer, and Margaret Martonosi. PipeCheck: Specifying and Verifying Microarchitectural Enforcement of Memory Consistency Models.  47th Annual IEEE/ACM International Symposium on Microarchitecture. December, 2014. <b>Nominated for Best Paper Award</b>. <a href="papers/dlustig_MICRO14header.pdf"> (pdf)</a> 
+      
+      </ul>
+      
+
+    </div>
+  </div>
+</div>
+
+<!-- Fifth Grid -->
+<div class="w3-row-padding" id="people">
+  <div class="w3-content">
+    <div>
+      <h3>People</h3>
+      <ul>
+      <li> <a href="http://www.cs.princeton.edu/~ctrippel/">Caroline Trippel</a>, Princeton CS Ph.D. Student
+      <li> <a href="http://www.cs.princeton.edu/~manerkar/">Yatin Manerkar</a>, Princeton CS Ph.D. Student
+      <li> <a href="http://www.princeton.edu/~mrm"> Prof. Margaret Martonosi</a>, Princeton
+      <li> <a href="http://daniellustig.net"> Dr. Dan Lustig</a>, Princeton EE Ph.D. -> Now at NVIDIA
+      <li> <a href="https://research.nvidia.com/users/michael-pellauer"> Dr. Michael Pellauer</a>, NVIDIA
+      </ul>
+
+    </div>
+  </div>
+
+<!-- Sixth Grid -->
+<div class="w3-row-padding w3-light-grey" id="tutorial">
+  <div class="w3-content">
+    <div>
+      <h3><a href="http://check.cs.princeton.edu/tutorial.html"> Tutorial</a></h3>
+      <ul> We will be giving a tutorial about our tool suite on Sunday June 25, 2017 at ISCA in Toronto.  The <a href="http://check.cs.princeton.edu/tutorial.html"> tutorial webpage</a> includes agenda information and will be updated with slides and demo materials.
+</div>
+</div>
+</div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity">
+    <h3 class="w3-margin w3-xlarge"><a href="http://mrmgroup.cs.princeton.edu/"> http://mrmgroup.cs.princeton.edu/</a></h3>
+</div>
+
+<!-- Footer -->
+<!--<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+   <a href="#" class="w3-hover-text-indigo"><i class="fa fa-facebook-official"></i></a>
+   <a href="#" class="w3-hover-text-orange"><i class="fa fa-pinterest-p"></i></a>
+   <a href="#" class="w3-hover-text-light-blue"><i class="fa fa-twitter"></i></a>
+   <a href="#" class="w3-hover-text-grey"><i class="fa fa-flickr"></i></a>
+   <a href="#" class="w3-hover-text-indigo"><i class="fa fa-linkedin"></i></a>
+ </div>
+ <p>Poweorange by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>-->
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+
+
+
+</body>
+</html>
+
